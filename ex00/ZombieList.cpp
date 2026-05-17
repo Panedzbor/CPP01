@@ -30,9 +30,13 @@ ZombieList::~ZombieList()
         this->prev->next = this->next;
     if (this->next)
         this->next->prev = this->prev;
+    if (this == head)
+        head = this->next;
+    delete this->ptr;
     this->ptr = NULL;
     this->prev = NULL;
     this->next = NULL;
+    total--;
 }
 
 ZombieList* addNewZombie(Zombie *ptr)
@@ -46,7 +50,6 @@ ZombieList* addNewZombie(Zombie *ptr)
 void ZombieList::destroyZombie(void)
 {
     delete this;
-    total--;
 }
 
 int ZombieList::get_total(void)
@@ -81,10 +84,10 @@ void ZombieList::displayAll(void)
     
     if (!head)
     {
-        std::cout << "No zombies created yet\n";
+        std::cout << "No zombies created yet\n\n";
         return ;
     }
-    std::cout << "All zombies created: \n\n";
+    std::cout << "Now all zombies put your hands up in the air! \n\n";
     for (ZombieList *cur = head; cur; cur = cur->next, i++)
     {
         std::cout << std::setw(7) << i + 1 << ". ";

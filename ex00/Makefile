@@ -8,7 +8,7 @@ OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 INCLUDES = $(wildcard *.hpp)
 RM = rm -rf
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re run
 
 all: $(NAME)
 
@@ -26,3 +26,6 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+run: all
+	valgrind ./$(NAME)

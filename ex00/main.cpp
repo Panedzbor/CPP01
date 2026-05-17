@@ -33,6 +33,7 @@ int main(void)
             int zombie_i = choose_zombie();
             z = ZombieList::findZombie(zombie_i);
             z->announce();
+            std::cout << '\n';
         }
         else if (input == '4')
         {
@@ -82,6 +83,7 @@ static std::string give_zombie_name(void)
         std::cin.ignore(1000, '\n');
         std::cout << "Give zombie a valid name: ";
     }
+    std::cout << '\n';
     return (name);
 }
 
@@ -90,7 +92,7 @@ static int choose_zombie(void)
     std::string s_index;
     int         i_index;
     
-    std::cout << "Type in zombie's index you want to announce: ";
+    std::cout << "Type in zombie's index you want to select: ";
     while (!(std::cin >> s_index) || s_index.empty() 
     || (i_index = std::atoi(s_index.c_str())) < 1 || i_index > ZombieList::get_total())
     {
@@ -98,5 +100,6 @@ static int choose_zombie(void)
         std::cin.ignore(1000, '\n');
         std::cout << "Type in a valid index: ";
     }
+    std::cout << '\n';
     return (i_index - 1);
 }
