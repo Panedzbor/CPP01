@@ -3,7 +3,10 @@
 int main(int argc, char *argv[])
 {
     if (argc != 4)
+    {
+        std::cout << "Please run the program with 3 arguments: ./replace <filename> <str_to_find> <replacement>\n";
         return (1);
+    }
     
     std::string filename = argv[1];
     std::string s1 = argv[2];

@@ -14,7 +14,7 @@ class TransferClass {
         std::string line;
         TransferClass();
     public:
-        TransferClass(std::string filename) : filename(filename) {};
+        TransferClass(std::string filename);
         bool openIFile(void);
         bool openOFile(void);
         void replaceContent(std::string s1, std::string s2);
