@@ -1,6 +1,6 @@
 #include "TransferClass.hpp"
 
-TransferClass::TransferClass(std::string filename) : filename(filename) {};
+TransferClass::TransferClass(std::string filename) : filename(filename) {}
 
 bool TransferClass::openIFile(void)
 {
